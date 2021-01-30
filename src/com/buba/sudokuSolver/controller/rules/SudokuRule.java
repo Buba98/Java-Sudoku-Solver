@@ -3,9 +3,11 @@ import com.buba.sudokuSolver.model.Sudoku;
 
 public abstract class SudokuRule {
 
-    Sudoku sudoku;
+    protected Sudoku sudoku;
 
     public abstract boolean isDigitPlaceable(byte x, byte y, byte digit);
 
-    protected abstract void setSudoku(Sudoku sudoku);
+    protected void setSudoku(Sudoku sudoku){
+        this.sudoku = sudoku;
+    }
 }

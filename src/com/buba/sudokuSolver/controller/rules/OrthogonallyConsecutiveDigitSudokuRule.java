@@ -4,19 +4,12 @@ import com.buba.sudokuSolver.model.Sudoku;
 
 public class OrthogonallyConsecutiveDigitSudokuRule extends SudokuRule {
 
-    private Sudoku sudoku;
-
     @Override
     public boolean isDigitPlaceable(byte x, byte y, byte digit) {
         return checkConsecutive((byte) (x + 1), y, digit) &&
                 checkConsecutive(x, (byte) (y + 1), digit) &&
                 checkConsecutive(x, (byte) (y - 1), digit) &&
                 checkConsecutive((byte) (x - 1), y, digit);
-    }
-
-    @Override
-    protected void setSudoku(Sudoku sudoku) {
-        this.sudoku = sudoku;
     }
 
     public boolean checkConsecutive(byte x, byte y, byte digit) {

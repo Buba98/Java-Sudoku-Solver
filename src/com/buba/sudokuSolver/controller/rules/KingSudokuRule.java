@@ -4,8 +4,6 @@ import com.buba.sudokuSolver.model.Sudoku;
 
 public class KingSudokuRule extends SudokuRule {
 
-    private Sudoku sudoku;
-
     @Override
     public boolean isDigitPlaceable(byte x, byte y, byte digit) {
         if (!sudoku.checkBoundary(x, y, digit))
@@ -19,11 +17,6 @@ public class KingSudokuRule extends SudokuRule {
                 checkEquality((byte) (x - 1), (byte) (y + 1), digit) &&
                 checkEquality((byte) (x - 1), y, digit) &&
                 checkEquality((byte) (x - 1), (byte) (y + 1), digit);
-    }
-
-    @Override
-    protected void setSudoku(Sudoku sudoku) {
-        this.sudoku = sudoku;
     }
 
     public boolean checkEquality(byte x, byte y, byte digit) {

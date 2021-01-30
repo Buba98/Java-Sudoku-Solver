@@ -1,7 +1,5 @@
 package com.buba.sudokuSolver.controller.rules;
 
-import com.buba.sudokuSolver.model.Sudoku;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +8,6 @@ public class ArrowSudokuRule extends SudokuRule {
 
     private final byte[] source;
     private final List<byte[]> arrow;
-    private Sudoku sudoku;
 
     public ArrowSudokuRule(byte[] source, List<byte[]> arrow) {
         this.arrow = arrow;
@@ -58,11 +55,6 @@ public class ArrowSudokuRule extends SudokuRule {
                     return sum < sudoku.getNumber(source[0], source[1]);
             }
         } else return true;
-    }
-
-    @Override
-    protected void setSudoku(Sudoku sudoku) {
-        this.sudoku = sudoku;
     }
 
     private boolean containsArray(byte[] o) {
