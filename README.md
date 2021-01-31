@@ -1,7 +1,7 @@
 # Sudoku-Solver
 
 This sudoku solver with a recursive function will find all the solutions (if the sudoku has any solution)
-for all the sudoku for witch the rules have been implemented.
+for all the sudoku for whom the rules have been implemented.
 
 For now the supported rules are:
 
@@ -12,3 +12,5 @@ For now the supported rules are:
   the digits in the arrow
 * Orthogonally consecutive digit: every digit can't have a consecutive digit (+1 / -1) in an orthogonal cell
 * Thermometer sudoku rule: digits must be strictly increasing from the round bulb to the flat end
+* Killer sudoku rule: in a cage a digit can't be repeated, and all digit in the cage have to sum up to a certain number
+* Diagonal sudoku rule: in both the diagonals the numbers can't be repeated
